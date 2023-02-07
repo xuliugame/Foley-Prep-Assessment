@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<ul id="result"></ul>
+
+<script>
+  function fetchData () {
+    return fetch('https://dev.foleyprep.com/interview/')
+      .then(res => res.json());
+  }
+
+  function grade (responses, answers) {
+    let correct = 0;
+    for (let i = 0; i < responses.length; ++i) {
+      if (responses[i] === answers[i]) {
+        ++correct;
+      }
+    }
+    return (correct / answers.length) * 100;
+  }
+
+  fetchData().then(json => {
+    // console.log(json);
+    let results = [];
+    for (let user of json.users) {
+      let g = grade(user.responses, json.tests.find(v => v.name === user.test).answers);
+      results.push({ name: user.name, grade: g });
+    }
+    document.getElementById('result').innerHTML = results.map(v => `<li>${v.name}'s score: ${v.grade}%</li>`).join('');
+  });
+</script>
+
+</body>
+</html>

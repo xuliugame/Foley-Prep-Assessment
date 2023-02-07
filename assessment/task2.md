@@ -1,0 +1,4 @@
+1. User A clicks the button requesting to become user B's friend, js initiates an ajax request to the server to become a friend, and the request parameters include my user id and target user id
+2. The server receives the request and stores the request in the database, including the requester user id, target user id, and request status (the default is pending)
+3. User B’s interface receives the message. If he clicks to reject, js will initiate an ajax request to the server to indicate rejection, and then the server will record the status of the request record as “rejected”. The friendship relationship has not been established, and the process ends
+4. If user B clicks to accept, js initiates an ajax request to the server to indicate acceptance, and then the server records the status of the request record as "accepted", and at the same time adds B to A's friend list, and adds A to the B's friend list, the friend relationship is established, and the process ends

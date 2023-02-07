@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #1da1f2;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box {
+            margin: 0 50px
+        }
+
+        .t1-o {
+            position: relative;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 50px 86.6px 50px;
+            border-color: transparent transparent dimgrey transparent;
+        }
+
+        .t1-i {
+            position: absolute;
+            top: 12px;
+            left: -40px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 40px 69.3px 40px;
+            border-color: transparent transparent darkgrey transparent;
+        }
+
+        .t1-line {
+            background: goldenrod;
+            width: 5px;
+            height: 84px;
+            position: absolute;
+            left: -3px;
+            top: 3px;
+        }
+
+        .t2-o {
+            position: relative;
+            width: 70px;
+            height: 70px;
+            border: 7px solid dimgrey;
+            background: darkgrey;
+            transform: rotate(45deg);
+        }
+
+        .t2-line {
+            background: goldenrod;
+            width: 116px;
+            height: 5px;
+            position: absolute;
+            transform: rotate(-45deg) translate(-39px, 6px);
+        }
+
+        .t3 {
+            clip-path: polygon(25% 0%, 75% 0%, 100% 55%, 50% 100%, 0% 55%);
+            width: 120px;
+            height: 100px;
+            background-color: dimgrey;
+            position: relative;
+        }
+
+        .t3:before {
+            clip-path: polygon(25% 0%, 75% 0%, 100% 55%, 50% 100%, 0% 55%);
+            display: block;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 120px;
+            height: 100px;
+            transform: scale(0.85);
+            transform-origin: center center;
+            background-color: darkgray;
+        }
+
+        .t3:after {
+            display: block;
+            content: '';
+            position: absolute;
+            width: 5px;
+            height: 99px;
+            left: 57px;
+            top: 0px;
+            background: goldenrod;
+        }
+
+        .t4 {
+            clip-path: polygon(75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%, 25% 0);
+            width: 120px;
+            height: 100px;
+            background-color: dimgrey;
+            position: relative;
+        }
+
+        .t4:before {
+            clip-path: polygon(75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%, 25% 0);
+            display: block;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 120px;
+            height: 100px;
+            transform: scale(0.85);
+            transform-origin: center center;
+            background-color: darkgray;
+        }
+
+        .t4:after {
+            display: block;
+            content: '';
+            position: absolute;
+            background: goldenrod;
+            width: 120px;
+            height: 5px;
+            left: 0px;
+            top: 48px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <div class="t1-o">
+        <div class="t1-i"></div>
+        <div class="t1-line"></div>
+    </div>
+</div>
+
+<div class="box">
+    <div class="t2-o">
+        <div class="t2-line"></div>
+    </div>
+</div>
+
+<div class="box">
+    <div class="t3"></div>
+</div>
+
+<div class="box">
+    <div class="t4"></div>
+</div>
+
+</body>
+</html>
